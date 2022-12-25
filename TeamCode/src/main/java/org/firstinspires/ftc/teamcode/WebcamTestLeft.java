@@ -254,7 +254,7 @@ public class WebcamTestLeft extends LinearOpMode {
 
 
 
-//might hve to add while left slide is busy and right slide is busy but idk
+//might have to add while left slide is busy and right slide is busy but idk (scratch this idea it works: present day adithya)
 
                 
                 break;
