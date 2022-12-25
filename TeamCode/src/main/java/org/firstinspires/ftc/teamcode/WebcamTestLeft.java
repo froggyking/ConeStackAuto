@@ -61,7 +61,6 @@ public class WebcamTestLeft extends LinearOpMode {
      */
     @Override
     public void runOpMode() {
-        int parkingSpot;
 
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
         webcam = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, "Webcam 1"), cameraMonitorViewId);
@@ -91,7 +90,6 @@ public class WebcamTestLeft extends LinearOpMode {
         intakeServo = hardwareMap.get(CRServo.class, "intakeServo");
 
         // Reverse one of the drive motors.
-        parkingSpot = 0;
         waitForStart();
         if (opModeIsActive()) {
             // Put run blocks here.
@@ -105,21 +103,11 @@ public class WebcamTestLeft extends LinearOpMode {
                 sleep(500);
                 //might have to update slide raise ticks
                 Encoder_SlideRaise(-2600, 2600, 0.7, 0.7);
-                encoder_drive(-2341,
-                        2341,2341,-2341,0.3,0.3,0.3,0.3);
+                encoder_drive(-2341, 2341,2341,-2341,0.3,0.3,0.3,0.3);
                 encoder_drive(155,155,155,155,0.3,0.3,0.3,0.3);
                 sleep(300);
                 ///code for webcam to read the cone color
-                if (aoepipeline.ColorValue == "blue") {
-                   parkingSpot = 1;
-                } else if(aoepipeline.ColorValue == "green") {
-                    parkingSpot = 2;
-                } else {
-                    if (aoepipeline.ColorValue == "red"){
-                    parkingSpot = 3;
-
-                    }
-                }
+               //ps: not here for now
                 //color code ends for now
                 _4barServo.setPosition(0.8);
                 intakeServo.setPower(-0.8);
@@ -127,20 +115,133 @@ public class WebcamTestLeft extends LinearOpMode {
                 _4barServo.setPosition(0.5);
                 encoder_drive(-155,-155,-155,-155,0.3,0.3,0.3,0.3);
                 Encoder_SlideRaise(2000, -2000, 0.7, 0.7); //FIX TICKS
+                encoder_drive(465,-465,-465,500,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(-600,600,0.7,0.7);
+                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                sleep(750);
+                _4barServo.setPosition(0.1);
+                intakeServo.setPower(0.8);
+                Encoder_SlideRaise(600,-600,0.7,0.7);
+                sleep(700);
+                Encoder_SlideRaise(-900,900,0.7,0.7);
+                sleep(900);
+                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
+                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
                 sleep(500);
-                if (parkingSpot == 1){
-                    encoder_drive(734,-734,-734,734,0.3,0.3,0.3,0.3);
-                    encoder_drive(734,734,734,734,0.3,0.3,0.3,0.3);
-                } else if (parkingSpot == 3){
-                    encoder_drive(734,-734,-734,734,0.3,0.3,0.3,0.3);
-                    encoder_drive(734,734,734,734,0.3,0.3,0.3,0.3);
+                _4barServo.setPosition(0.5);
+                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                sleep(400);
+                _4barServo.setPosition(0.8);
+                intakeServo.setPower(-0.8);
+                _4barServo.setPosition(0.5);
+                sleep(250);
+                //first cycle
+                Encoder_SlideRaise(2000,-2000,0.7,0.7);
+                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
+                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                sleep(250);
+                _4barServo.setPosition(0.1);
+                intakeServo.setPower(0.8);
+                Encoder_SlideRaise(600,-600,0.7,0.7);
+                sleep(700);
+                Encoder_SlideRaise(-900,900,0.7,0.7);
+                sleep(900);
+                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
+                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
+                sleep(500);
+                _4barServo.setPosition(0.5);
+                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                sleep(400);
+                _4barServo.setPosition(0.8);
+                intakeServo.setPower(-0.8);
+                _4barServo.setPosition(0.5);
+                sleep(250);
+                //second cycle
+                Encoder_SlideRaise(2000,-2000,0.7,0.7);
+                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
+                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                sleep(250);
+                _4barServo.setPosition(0.1);
+                intakeServo.setPower(0.8);
+                Encoder_SlideRaise(600,-600,0.7,0.7);
+                sleep(700);
+                Encoder_SlideRaise(-900,900,0.7,0.7);
+                sleep(900);
+                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
+                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
+                sleep(500);
+                _4barServo.setPosition(0.5);
+                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                sleep(400);
+                _4barServo.setPosition(0.8);
+                intakeServo.setPower(-0.8);
+                _4barServo.setPosition(0.5);
+                sleep(250);
+                //third cycle
+                Encoder_SlideRaise(2000,-2000,0.7,0.7);
+                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
+                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                sleep(250);
+                _4barServo.setPosition(0.1);
+                intakeServo.setPower(0.8);
+                Encoder_SlideRaise(600,-600,0.7,0.7);
+                sleep(700);
+                Encoder_SlideRaise(-900,900,0.7,0.7);
+                sleep(900);
+                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
+                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
+                sleep(500);
+                _4barServo.setPosition(0.5);
+                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                sleep(400);
+                _4barServo.setPosition(0.8);
+                intakeServo.setPower(-0.8);
+                _4barServo.setPosition(0.5);
+                sleep(250);
+                //fourth cycle
+                Encoder_SlideRaise(2000,-2000,0.7,0.7);
+                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
+                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                sleep(250);
+                _4barServo.setPosition(0.1);
+                intakeServo.setPower(0.8);
+                Encoder_SlideRaise(600,-600,0.7,0.7);
+                sleep(700);
+                Encoder_SlideRaise(-900,900,0.7,0.7);
+                sleep(900);
+                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
+                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
+                sleep(500);
+                _4barServo.setPosition(0.5);
+                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                sleep(400);
+                _4barServo.setPosition(0.8);
+                intakeServo.setPower(-0.8);
+                _4barServo.setPosition(0.5);
+                sleep(250);
+                //fifth (final) cycle
+                Encoder_SlideRaise(2000,-2000,0.7,0.7);
+                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
+                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                sleep(250);
+                _4barServo.setPosition(0.1);
+                intakeServo.setPower(0.8);
+                Encoder_SlideRaise(600,-600,0.7,0.7);
+                sleep(700);
+                Encoder_SlideRaise(-900,900,0.7,0.7);
+                sleep(900);
+                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
+                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
+                sleep(500);
+                _4barServo.setPosition(0.5);
+                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                sleep(400);
+                _4barServo.setPosition(0.8);
+                intakeServo.setPower(-0.8);
+                _4barServo.setPosition(0.5);
+                sleep(250);
 
-                } else {
-                    if (parkingSpot == 2){
-                        encoder_drive(734,-734,-734,734,0.3,0.3,0.3,0.3);
 
-                    }
-                }
 
 
 
