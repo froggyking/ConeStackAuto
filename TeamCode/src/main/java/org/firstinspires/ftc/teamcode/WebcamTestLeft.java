@@ -163,7 +163,7 @@ public class WebcamTestLeft extends LinearOpMode {
                 sleep(400);
                 intakeServo.setPower(0.8);
                 _4barServo.setPosition(0.1);
-                sleep(500);
+                sleep(450);
                 Encoder_SlideRaise(-800,800,0.7,0.7);
                 sleep(400);
                 _4barServo.setPosition(0.5);
