@@ -61,10 +61,11 @@ public class WebcamTestLeft extends LinearOpMode {
      */
     @Override
     public void runOpMode() {
+        int parkingSpot;
 
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
         webcam = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, "Webcam 1"), cameraMonitorViewId);
-        AOEColorPipeline aoepipeline = new AOEColorPipeline("2022-2023", webcam,0,0,200,200);
+        AOEColorPipeline aoepipeline = new AOEColorPipeline("2022-2023", webcam,0,0,128,100);
         webcam.setPipeline(aoepipeline);
         webcam.openCameraDeviceAsync(new OpenCvCamera.AsyncCameraOpenListener()
         {
@@ -80,6 +81,7 @@ public class WebcamTestLeft extends LinearOpMode {
             }
         });
 
+
         frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
         frontRight = hardwareMap.get(DcMotor.class, "frontRight");
         backLeft = hardwareMap.get(DcMotor.class, "backLeft");
@@ -94,10 +96,20 @@ public class WebcamTestLeft extends LinearOpMode {
         if (opModeIsActive()) {
             // Put run blocks here.
             while (opModeIsActive()) {
+                parkingSpot = 0;
+
                 leftSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
                 rightSlide.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
                 backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
                 frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+                if (aoepipeline.ColorValue == "blue"){
+                    parkingSpot = 1;
+                } else if (aoepipeline.ColorValue == "green"){
+                    parkingSpot = 2;
+                } else if (aoepipeline.ColorValue == "red"){
+                    parkingSpot = 3;
+                }
+                //camera color code
                 intakeServo.setPower(0.8);
                 _4barServo.setPosition(0.5);
                 sleep(500);
@@ -144,7 +156,7 @@ public class WebcamTestLeft extends LinearOpMode {
 
 
                 //second cycle
-                encoder_drive(335,-335,-335,335,0.3,0.3,0.3,0.3);
+                encoder_drive(330,-330,-330,330,0.3,0.3,0.3,0.3);
                 Encoder_SlideRaise(-300,300,0.7,0.7);
                 sleep(250);
                 encoder_drive(-915,-915,-915,-915,0.3,0.3,0.3,0.3);
@@ -156,7 +168,7 @@ public class WebcamTestLeft extends LinearOpMode {
                 sleep(400);
                 _4barServo.setPosition(0.5);
                 encoder_drive(915,915,915,915,0.3,0.3,0.3,0.3);
-                encoder_drive(-415,415,415,-415,0.3,0.3,0.3,0.3);
+                encoder_drive(-420,420,420,-420,0.3,0.3,0.3,0.3);
                 Encoder_SlideRaise(-2600,2600,0.7,0.7);
                 sleep(600);
                 encoder_drive(200,200,200,200,0.3,0.3,0.3,0.3);
@@ -170,7 +182,30 @@ public class WebcamTestLeft extends LinearOpMode {
                 Encoder_SlideRaise(-2300,2300,0.7,0.7);
                 sleep(250);
 
-                //third cycle
+                //parking spot code camera color signal code
+
+                if (parkingSpot == 1){
+                    encoder_drive(1040,-1040,-1040,1040,0.3,0.3,0.3,0.3);
+                    Encoder_SlideRaise(500,-500,0.7,0.7);
+                    encoder_drive(-551,-551,-551,-551,0.3,0.3,0.3,0.3);
+                    sleep(300);
+
+                } else if (parkingSpot == 2){
+                    encoder_drive(1040,-1040,-1040,1040,0.3,0.3,0.3,0.3);
+                    Encoder_SlideRaise(500,-500,0.7,0.7);
+                    sleep(300);
+
+
+
+                } else if (parkingSpot == 3){
+                    encoder_drive(1040,-1040,-1040,1040,0.3,0.3,0.3,0.3);
+                    Encoder_SlideRaise(500,-500,0.7,0.7);
+                    encoder_drive(551,551,551,551,0.3,0.3,0.3,0.3);
+                    sleep(300);
+
+
+                }
+
 
 
 
