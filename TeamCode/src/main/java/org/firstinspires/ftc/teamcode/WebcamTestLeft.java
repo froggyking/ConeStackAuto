@@ -104,8 +104,10 @@ public class WebcamTestLeft extends LinearOpMode {
                 //might have to update slide raise ticks
                 Encoder_SlideRaise(-2600, 2600, 0.7, 0.7);
                 encoder_drive(-2341, 2341,2341,-2341,0.3,0.3,0.3,0.3);
-                encoder_drive(155,155,155,155,0.3,0.3,0.3,0.3);
+                encoder_drive(250,250,250,250,0.3,0.3,0.3,0.3);
+
                 sleep(300);
+                //high junction stops
                 ///code for webcam to read the cone color
                //ps: not here for now
                 //color code ends for now
@@ -113,133 +115,66 @@ public class WebcamTestLeft extends LinearOpMode {
                 intakeServo.setPower(-0.8);
                 sleep(500);
                 _4barServo.setPosition(0.5);
-                encoder_drive(-155,-155,-155,-155,0.3,0.3,0.3,0.3);
-                Encoder_SlideRaise(2000, -2000, 0.7, 0.7); //FIX TICKS
-                encoder_drive(465,-465,-465,500,0.3,0.3,0.3,0.3);
-                Encoder_SlideRaise(-600,600,0.7,0.7);
-                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
-                sleep(750);
-                _4barServo.setPosition(0.1);
-                intakeServo.setPower(0.8);
-                Encoder_SlideRaise(600,-600,0.7,0.7);
-                sleep(700);
-                Encoder_SlideRaise(-900,900,0.7,0.7);
-                sleep(900);
-                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
-                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
-                sleep(500);
-                _4barServo.setPosition(0.5);
-                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                encoder_drive(-250,-250,-250,-250,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(2600, -2600, 0.7, 0.7);
+               encoder_drive(415,-415,-415,415,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(-300,300,0.7,0.7);
+               encoder_drive(-915,-915,-915,-915,0.3,0.3,0.3,0.3);
+              sleep(400);
+              intakeServo.setPower(0.8);
+              _4barServo.setPosition(0.1);
+              sleep(500);
+              Encoder_SlideRaise(-800,800,0.7,0.7);
+              sleep(400);
+              _4barServo.setPosition(0.5);
+              encoder_drive(915,915,915,915,0.3,0.3,0.3,0.3);
+              encoder_drive(-345,345,345,-345,0.3,0.3,0.3,0.3);
+              Encoder_SlideRaise(-2600,2600,0.7,0.7);
+              sleep(600);
+                encoder_drive(200,200,200,200,0.3,0.3,0.3,0.3);
                 sleep(400);
                 _4barServo.setPosition(0.8);
+                sleep(250);
                 intakeServo.setPower(-0.8);
-                _4barServo.setPosition(0.5);
                 sleep(250);
-                //first cycle
-                Encoder_SlideRaise(2000,-2000,0.7,0.7);
-                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
-                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
-                sleep(250);
-                _4barServo.setPosition(0.1);
-                intakeServo.setPower(0.8);
-                Encoder_SlideRaise(600,-600,0.7,0.7);
-                sleep(700);
-                Encoder_SlideRaise(-900,900,0.7,0.7);
-                sleep(900);
-                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
-                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
-                sleep(500);
                 _4barServo.setPosition(0.5);
-                Encoder_SlideRaise(-1700,1700,0.7,0.7);
-                sleep(400);
-                _4barServo.setPosition(0.8);
-                intakeServo.setPower(-0.8);
-                _4barServo.setPosition(0.5);
+                encoder_drive(-200,-200,-200,-200,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(2300,-2300,0.7,0.7);
                 sleep(250);
+
+
                 //second cycle
-                Encoder_SlideRaise(2000,-2000,0.7,0.7);
-                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
-                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
+                encoder_drive(335,-335,-335,335,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(-300,300,0.7,0.7);
                 sleep(250);
-                _4barServo.setPosition(0.1);
+                encoder_drive(-915,-915,-915,-915,0.3,0.3,0.3,0.3);
+                sleep(400);
                 intakeServo.setPower(0.8);
-                Encoder_SlideRaise(600,-600,0.7,0.7);
-                sleep(700);
-                Encoder_SlideRaise(-900,900,0.7,0.7);
-                sleep(900);
-                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
-                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
+                _4barServo.setPosition(0.1);
                 sleep(500);
+                Encoder_SlideRaise(-800,800,0.7,0.7);
+                sleep(400);
                 _4barServo.setPosition(0.5);
-                Encoder_SlideRaise(-1700,1700,0.7,0.7);
+                encoder_drive(915,915,915,915,0.3,0.3,0.3,0.3);
+                encoder_drive(-415,415,415,-415,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(-2600,2600,0.7,0.7);
+                sleep(600);
+                encoder_drive(200,200,200,200,0.3,0.3,0.3,0.3);
                 sleep(400);
                 _4barServo.setPosition(0.8);
-                intakeServo.setPower(-0.8);
-                _4barServo.setPosition(0.5);
                 sleep(250);
+                intakeServo.setPower(-0.8);
+                sleep(250);
+                _4barServo.setPosition(0.5);
+                encoder_drive(-200,-200,-200,-200,0.3,0.3,0.3,0.3);
+                Encoder_SlideRaise(-2300,2300,0.7,0.7);
+                sleep(250);
+
                 //third cycle
-                Encoder_SlideRaise(2000,-2000,0.7,0.7);
-                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
-                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
-                sleep(250);
-                _4barServo.setPosition(0.1);
-                intakeServo.setPower(0.8);
-                Encoder_SlideRaise(600,-600,0.7,0.7);
-                sleep(700);
-                Encoder_SlideRaise(-900,900,0.7,0.7);
-                sleep(900);
-                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
-                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
-                sleep(500);
-                _4barServo.setPosition(0.5);
-                Encoder_SlideRaise(-1700,1700,0.7,0.7);
-                sleep(400);
-                _4barServo.setPosition(0.8);
-                intakeServo.setPower(-0.8);
-                _4barServo.setPosition(0.5);
-                sleep(250);
-                //fourth cycle
-                Encoder_SlideRaise(2000,-2000,0.7,0.7);
-                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
-                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
-                sleep(250);
-                _4barServo.setPosition(0.1);
-                intakeServo.setPower(0.8);
-                Encoder_SlideRaise(600,-600,0.7,0.7);
-                sleep(700);
-                Encoder_SlideRaise(-900,900,0.7,0.7);
-                sleep(900);
-                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
-                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
-                sleep(500);
-                _4barServo.setPosition(0.5);
-                Encoder_SlideRaise(-1700,1700,0.7,0.7);
-                sleep(400);
-                _4barServo.setPosition(0.8);
-                intakeServo.setPower(-0.8);
-                _4barServo.setPosition(0.5);
-                sleep(250);
-                //fifth (final) cycle
-                Encoder_SlideRaise(2000,-2000,0.7,0.7);
-                encoder_drive(515,-515,-515,515,0.3,0.3,0.3,0.3);
-                encoder_drive(-1000,-1000,-1000,-1000,0.3,0.3,0.3,0.3);
-                sleep(250);
-                _4barServo.setPosition(0.1);
-                intakeServo.setPower(0.8);
-                Encoder_SlideRaise(600,-600,0.7,0.7);
-                sleep(700);
-                Encoder_SlideRaise(-900,900,0.7,0.7);
-                sleep(900);
-                encoder_drive(1000,1000,1000,1000,0.3,0.3,0.3,0.3);
-                encoder_drive(-515,515,515,-515,0.3,0.3,0.3,0.3);
-                sleep(500);
-                _4barServo.setPosition(0.5);
-                Encoder_SlideRaise(-1700,1700,0.7,0.7);
-                sleep(400);
-                _4barServo.setPosition(0.8);
-                intakeServo.setPower(-0.8);
-                _4barServo.setPosition(0.5);
-                sleep(275);
+
+
+
+
 
 
 
