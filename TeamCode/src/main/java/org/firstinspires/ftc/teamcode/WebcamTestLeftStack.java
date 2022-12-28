@@ -14,10 +14,8 @@ import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 import org.openftc.easyopencv.OpenCvWebcam;
 
-import java.util.Base64;
-
 @Autonomous(name = "LeftStackAutoFinal")
-public class WebcamTestLeft extends LinearOpMode {
+public class WebcamTestLeftStack extends LinearOpMode {
     OpenCvWebcam webcam;
     private DcMotor frontLeft;
     private DcMotor frontRight;
@@ -125,7 +123,7 @@ public class WebcamTestLeft extends LinearOpMode {
                 //color code ends for now
                 _4barServo.setPosition(0.8);
                 intakeServo.setPower(-0.8);
-                sleep(500);
+                sleep(499);
                 _4barServo.setPosition(0.5);
                 encoder_drive(-250,-250,-250,-250,0.3,0.3,0.3,0.3);
                 Encoder_SlideRaise(2600, -2600, 0.7, 0.7);
