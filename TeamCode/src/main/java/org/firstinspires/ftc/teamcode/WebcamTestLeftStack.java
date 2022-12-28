@@ -123,7 +123,7 @@ public class WebcamTestLeftStack extends LinearOpMode {
                 //color code ends for now
                 _4barServo.setPosition(0.8);
                 intakeServo.setPower(-0.8);
-                sleep(499);
+                sleep(500);
                 _4barServo.setPosition(0.5);
                 encoder_drive(-250,-250,-250,-250,0.3,0.3,0.3,0.3);
                 Encoder_SlideRaise(2600, -2600, 0.7, 0.7);
