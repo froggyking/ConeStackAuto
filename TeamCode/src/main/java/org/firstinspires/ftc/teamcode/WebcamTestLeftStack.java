@@ -97,6 +97,7 @@ public class WebcamTestLeftStack extends LinearOpMode {
         if (opModeIsActive()) {
             // Put run blocks here.
             while (opModeIsActive()) {
+                sleep(400);
                 parkingSpot = 0;
                 what = aoepipeline.ColorValue;
 
@@ -192,7 +193,7 @@ public class WebcamTestLeftStack extends LinearOpMode {
                 //cycle3
                 Encoder_SlideRaise(700,-700,0.7,0.7);
                 sleep(300);
-                Encoder_SlideRaise(-175,175,0.7,0.7);
+                Encoder_SlideRaise(-150,150,0.7,0.7);
                 sleep(150);
                 encoder_drive(-460,460,460,-460,0.2,0.2,0.2,0.2);
                 sleep(250);
@@ -221,7 +222,7 @@ public class WebcamTestLeftStack extends LinearOpMode {
                 //cycle4
                 Encoder_SlideRaise(700,-700,0.7,0.7);
                 sleep(300);
-                Encoder_SlideRaise(-150,150,0.7,0.7);
+                Encoder_SlideRaise(-100,100,0.7,0.7);
                 sleep(150);
                 encoder_drive(-460,460,460,-460,0.2,0.2,0.2,0.2);
                 sleep(250);
@@ -246,33 +247,8 @@ public class WebcamTestLeftStack extends LinearOpMode {
                 sleep(300);
                 _4barServo.setPosition(0.5);
                 sleep(150);
-                Encoder_SlideRaise(700,-700,0.7,0.7);
-                sleep(300);
-                Encoder_SlideRaise(-125,125,0.7,0.7);
-                sleep(150);
-                encoder_drive(-460,460,460,-460,0.2,0.2,0.2,0.2);
-                sleep(250);
-                encoder_drive(-250,-250,-250,-250,0.2,0.2,0.2,0.2);
-                sleep(200);
-                intakeServo.setPower(0.8);
-                _4barServo.setPosition(0.1);
-                sleep(500);
-                Encoder_SlideRaise(-1000,1000,0.7,0.7);
-                sleep(400);
-                _4barServo.setPosition(0.5);
-                sleep(600);
-                encoder_drive(150,150,150,150,0.2,0.2,0.2,0.2);
-                encoder_drive(480,-480,-480,480,0.2,0.2,0.2,0.2);
-                encoder_drive(200,200,200,200,0.2,0.2,0.2,0.2);
-                sleep(250);
-                _4barServo.setPosition(0.8);
-                sleep(300);
-                intakeServo.setPower(-0.8);
-                sleep(200);
-                encoder_drive(-200,-200,-200,-200,0.2,0.2,0.2,0.2);
-                sleep(300);
-                _4barServo.setPosition(0.5);
-                sleep(150);
+
+
                 //cycle5
                 Encoder_SlideRaise(700,-700,0.7,0.7);
                 sleep(300);
@@ -299,6 +275,9 @@ public class WebcamTestLeftStack extends LinearOpMode {
                 sleep(200);
                 encoder_drive(-200,-200,-200,-200,0.3,0.3,0.3,0.3);
                 sleep(300);
+                _4barServo.setPosition(0.5);
+                sleep(150);
+
 
 
                 if (parkingSpot == 1) {
@@ -308,14 +287,14 @@ public class WebcamTestLeftStack extends LinearOpMode {
 
                 } else if (parkingSpot == 2) {
                     encoder_drive(420, -420, -420, 420, 0.3, 0.3, 0.3, 0.3);
-                    encoder_drive(550, 550, 550, 550, 0.3, 0.3, 0.3, 0.3);
+                    encoder_drive(700, 700, 700, 700, 0.3, 0.3, 0.3, 0.3);
                     sleep(150);
                     break;
 
 
                 } else if (parkingSpot == 3) {
                     encoder_drive(367, -367, -367, 367, 0.3, 0.3, 0.3, 0.3);
-                    encoder_drive(1400, 1400, 1400, 1400, 0.3, 0.3, 0.3, 0.3);
+                    encoder_drive(1500, 1500, 1500, 1500, 0.3, 0.3, 0.3, 0.3);
                     break;
 
 
